@@ -5,15 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IronWolf NAS Hard Drives | Built for What Never Stops | Seagate</title>
   <meta name="description" content="IronWolf NAS hard drives — engineered for 24/7 performance, up to 32TB capacity, with free 3-year data recovery. The drive your NAS deserves.">
+  <!-- Seagate brand fonts — loaded directly from seagate.com CDN -->
+  <style>
+    @font-face {
+      font-family: 'Sohne Breit';
+      src: url('https://www.seagate.com/etc.clientlibs/seagate/clientlibs/clientlib-resources/resources/assets/fonts/Fonts/soehne-breit-halbfett.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Sohne Breit';
+      src: url('https://www.seagate.com/etc.clientlibs/seagate/clientlibs/clientlib-resources/resources/assets/fonts/Fonts/soehne-breit-kraftig.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Sohne Breit';
+      src: url('https://www.seagate.com/etc.clientlibs/seagate/clientlibs/clientlib-resources/resources/assets/fonts/Fonts/soehne-breit-halbfett-kursiv.woff2') format('woff2');
+      font-weight: 600;
+      font-style: italic;
+      font-display: swap;
+    }
+  </style>
+  <!-- TT Commons Pro fallback via Google Fonts (DM Sans is closest available match) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --green: #6EBE49;
-      --green-dark: #4a9a2e;
+      --green-dark: #467C2D;
       --green-glow: rgba(110, 190, 73, 0.15);
       --black: #0a0a0a;
       --dark: #111111;
@@ -23,16 +48,22 @@
       --gray-light: #bbbbbb;
       --white: #ffffff;
       --off-white: #f5f5f7;
+      --font-heading: 'Sohne Breit', 'Barlow', 'DM Sans', Helvetica, Arial, sans-serif;
+      --font-body: 'tt-commons-pro', 'DM Sans', Helvetica, Arial, sans-serif;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: var(--font-body);
       background: var(--black);
       color: var(--white);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
     }
 
     /* ── NAV ── */
@@ -51,10 +82,11 @@
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
     .nav-logo {
+      font-family: var(--font-heading);
       font-size: 18px;
-      font-weight: 700;
-      letter-spacing: -0.3px;
-      color: var(--white);
+      font-weight: 600;
+      letter-spacing: normal;
+      color: var(--green-dark);
       text-decoration: none;
     }
     .nav-logo span { color: var(--green); }
@@ -74,11 +106,12 @@
     .nav-cta {
       background: var(--green);
       color: var(--black) !important;
-      font-weight: 600 !important;
-      padding: 8px 18px;
-      border-radius: 20px;
-      font-size: 13px !important;
+      font-weight: 500 !important;
+      padding: 8px 20px;
+      border-radius: 0;
+      font-size: 14px !important;
       transition: background 0.2s !important;
+      font-family: var(--font-body) !important;
     }
     .nav-cta:hover { background: #7fd455 !important; }
 
@@ -131,10 +164,11 @@
       50% { opacity: 0.5; transform: scale(0.8); }
     }
     .hero h1 {
-      font-size: clamp(48px, 8vw, 96px);
-      font-weight: 800;
-      line-height: 1.0;
-      letter-spacing: -2px;
+      font-family: var(--font-heading);
+      font-size: clamp(48px, 7vw, 88px);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: normal;
       max-width: 900px;
       margin-bottom: 24px;
     }
@@ -143,10 +177,10 @@
       color: var(--green);
     }
     .hero-sub {
-      font-size: clamp(18px, 2.5vw, 22px);
+      font-size: clamp(16px, 2vw, 18px);
       color: var(--gray-light);
-      font-weight: 400;
-      line-height: 1.6;
+      font-weight: 300;
+      line-height: 1.75;
       max-width: 600px;
       margin-bottom: 48px;
     }
@@ -159,34 +193,33 @@
     .btn-primary {
       background: var(--green);
       color: var(--black);
-      font-weight: 700;
+      font-family: var(--font-body);
+      font-weight: 500;
       font-size: 16px;
-      padding: 16px 36px;
-      border-radius: 50px;
+      padding: 14px 32px;
+      border-radius: 0;
       text-decoration: none;
-      transition: all 0.25s;
+      transition: background 0.2s;
       display: inline-block;
+      letter-spacing: normal;
     }
-    .btn-primary:hover {
-      background: #7fd455;
-      transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(110,190,73,0.35);
-    }
+    .btn-primary:hover { background: #7fd455; }
     .btn-secondary {
-      background: rgba(255,255,255,0.07);
+      background: transparent;
       color: var(--white);
-      font-weight: 600;
+      font-family: var(--font-body);
+      font-weight: 500;
       font-size: 16px;
-      padding: 16px 36px;
-      border-radius: 50px;
+      padding: 13px 32px;
+      border-radius: 0;
       text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.12);
-      transition: all 0.25s;
+      border: 1px solid rgba(255,255,255,0.3);
+      transition: border-color 0.2s, background 0.2s;
       display: inline-block;
     }
     .btn-secondary:hover {
-      background: rgba(255,255,255,0.12);
-      transform: translateY(-2px);
+      border-color: var(--white);
+      background: rgba(255,255,255,0.06);
     }
 
     /* Hero drive image placeholder */
@@ -269,10 +302,11 @@
       text-align: center;
     }
     .hero-stat-num {
+      font-family: var(--font-heading);
       font-size: 36px;
-      font-weight: 800;
+      font-weight: 600;
       color: var(--green);
-      letter-spacing: -1px;
+      letter-spacing: normal;
       line-height: 1;
     }
     .hero-stat-label {
@@ -285,24 +319,28 @@
     section { padding: 120px 24px; }
     .container { max-width: 1100px; margin: 0 auto; }
     .section-eyebrow {
+      font-family: var(--font-heading);
       font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+      font-weight: 500;
+      letter-spacing: normal;
       text-transform: uppercase;
-      color: var(--green);
+      color: var(--white);
       margin-bottom: 16px;
+      opacity: 0.7;
     }
     .section-title {
-      font-size: clamp(36px, 5vw, 60px);
-      font-weight: 800;
-      letter-spacing: -1.5px;
-      line-height: 1.05;
+      font-family: var(--font-heading);
+      font-size: clamp(36px, 4.5vw, 56px);
+      font-weight: 600;
+      letter-spacing: normal;
+      line-height: 1.15;
       margin-bottom: 20px;
     }
     .section-sub {
-      font-size: 18px;
+      font-size: 16px;
+      font-weight: 300;
       color: var(--gray-light);
-      line-height: 1.65;
+      line-height: 1.75;
       max-width: 600px;
     }
 
@@ -336,22 +374,24 @@
       font-size: 24px;
     }
     .feature-title {
+      font-family: var(--font-heading);
       font-size: 20px;
-      font-weight: 700;
-      letter-spacing: -0.3px;
+      font-weight: 600;
+      letter-spacing: normal;
       margin-bottom: 12px;
     }
     .feature-desc {
       font-size: 15px;
+      font-weight: 300;
       color: var(--gray-light);
-      line-height: 1.65;
+      line-height: 1.75;
     }
     .feature-highlight {
       display: inline-block;
       margin-top: 16px;
       font-size: 13px;
-      font-weight: 600;
-      color: var(--green);
+      font-weight: 500;
+      color: var(--green-dark);
     }
 
     /* ── CAPACITY BAR ── */
@@ -413,14 +453,16 @@
       padding: 48px 40px;
     }
     .proof-num {
+      font-family: var(--font-heading);
       font-size: 56px;
-      font-weight: 900;
-      letter-spacing: -2px;
+      font-weight: 600;
+      letter-spacing: normal;
       color: var(--green);
       line-height: 1;
       margin-bottom: 12px;
     }
     .proof-label {
+      font-family: var(--font-heading);
       font-size: 16px;
       font-weight: 600;
       margin-bottom: 10px;
@@ -519,9 +561,10 @@
       margin-bottom: 20px;
     }
     .lineup-name {
+      font-family: var(--font-heading);
       font-size: 22px;
-      font-weight: 800;
-      letter-spacing: -0.3px;
+      font-weight: 600;
+      letter-spacing: normal;
       margin-bottom: 6px;
     }
     .lineup-tagline {
@@ -545,9 +588,10 @@
       flex-shrink: 0;
     }
     .lineup-price {
+      font-family: var(--font-heading);
       font-size: 28px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
+      font-weight: 600;
+      letter-spacing: normal;
       margin-bottom: 4px;
     }
     .lineup-price-sub { font-size: 12px; color: var(--gray); margin-bottom: 20px; }
@@ -564,14 +608,20 @@
     .lineup-btn-primary {
       background: var(--green);
       color: var(--black);
+      border-radius: 0;
+      font-family: var(--font-body);
+      font-weight: 500;
     }
     .lineup-btn-primary:hover { background: #7fd455; }
     .lineup-btn-ghost {
-      background: rgba(255,255,255,0.06);
+      background: transparent;
       color: var(--white);
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 0;
+      font-family: var(--font-body);
+      font-weight: 500;
     }
-    .lineup-btn-ghost:hover { background: rgba(255,255,255,0.1); }
+    .lineup-btn-ghost:hover { border-color: var(--white); background: rgba(255,255,255,0.06); }
 
     /* ── AWARD BANNER ── */
     .award-section {
@@ -596,7 +646,7 @@
     .award-text {}
     .award-title-small { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); }
     .award-name { font-size: 18px; font-weight: 800; margin-top: 2px; }
-    .award-headline { font-size: 32px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 16px; }
+    .award-headline { font-family: var(--font-heading); font-size: 32px; font-weight: 600; letter-spacing: normal; margin-bottom: 16px; }
     .award-desc { font-size: 16px; color: var(--gray-light); line-height: 1.6; }
 
     /* ── DATA RECOVERY ── */
