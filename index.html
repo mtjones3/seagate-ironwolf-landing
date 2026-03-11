@@ -655,6 +655,97 @@
     .footer-links a { font-size: 12px; color: var(--gray); text-decoration: none; }
     .footer-links a:hover { color: var(--white); }
 
+    /* ── SYNOLOGY SECTION ── */
+    .synology-section {
+      background: linear-gradient(160deg, #0f1a0c 0%, #0a0a0a 60%, #111 100%);
+      border-top: 1px solid rgba(110,190,73,0.08);
+      border-bottom: 1px solid rgba(110,190,73,0.08);
+    }
+    .synology-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    @media(max-width: 768px) { .synology-layout { grid-template-columns: 1fr; gap: 48px; } }
+    .synology-alert {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,190,50,0.08);
+      border: 1px solid rgba(255,190,50,0.2);
+      color: #ffc940;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    .nas-compat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .nas-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      padding: 20px 20px;
+      transition: all 0.25s;
+    }
+    .nas-card:hover {
+      background: rgba(110,190,73,0.06);
+      border-color: rgba(110,190,73,0.2);
+      transform: translateY(-2px);
+    }
+    .nas-card.highlighted {
+      background: rgba(110,190,73,0.06);
+      border-color: rgba(110,190,73,0.25);
+    }
+    .nas-card-name {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .nas-card-sub {
+      font-size: 12px;
+      color: var(--gray);
+      line-height: 1.4;
+    }
+    .nas-card-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-top: 8px;
+    }
+    .nas-badge-green {
+      background: rgba(110,190,73,0.15);
+      color: var(--green);
+    }
+    .nas-badge-gray {
+      background: rgba(255,255,255,0.07);
+      color: var(--gray-light);
+    }
+    .freedom-banner {
+      background: rgba(110,190,73,0.05);
+      border: 1px solid rgba(110,190,73,0.15);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-top: 48px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .freedom-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+    .freedom-text-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .freedom-text-desc { font-size: 14px; color: var(--gray-light); line-height: 1.6; }
+
     /* ── SCROLL ANIMATIONS ── */
     .fade-in {
       opacity: 0;
@@ -685,6 +776,7 @@
   <nav>
     <a class="nav-logo" href="https://www.seagate.com">Sea<span>gate</span></a>
     <ul class="nav-links">
+      <li><a href="#compatibility">NAS Compatibility</a></li>
       <li><a href="#features">Features</a></li>
       <li><a href="#compare">Compare</a></li>
       <li><a href="#lineup">Lineup</a></li>
@@ -718,6 +810,63 @@
       <div class="hero-stat">
         <div class="hero-stat-num">3yr</div>
         <div class="hero-stat-label">Free Rescue Data Recovery</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYNOLOGY / NAS COMPATIBILITY -->
+  <section class="synology-section" id="compatibility">
+    <div class="container">
+      <div class="synology-layout">
+        <div class="fade-in">
+          <div class="synology-alert">⚠ NAS Compatibility Notice</div>
+          <h2 class="section-title" style="font-size:clamp(32px,4.5vw,52px);">Switching NAS?<br><em style="font-style:normal;color:var(--green)">IronWolf works.</em></h2>
+          <p class="section-sub" style="margin-bottom:28px;">As NAS manufacturers change their drive compatibility policies, more users are switching platforms. IronWolf is certified and tested across every major NAS brand — wherever you land, IronWolf is ready.</p>
+          <p style="font-size:15px; color:var(--gray-light); line-height:1.65; margin-bottom:32px;">IronWolf drives are on the official compatibility lists of Synology, QNAP, Asustor, UGREEN, Terramaster, and more. No proprietary lock-in. No forced upgrades. Your drive, your choice.</p>
+          <div class="freedom-banner">
+            <div class="freedom-icon">🔓</div>
+            <div>
+              <div class="freedom-text-title">No Lock-In. Ever.</div>
+              <div class="freedom-text-desc">IronWolf works with your current NAS and any NAS you upgrade to. Seagate has never — and will never — lock IronWolf to a specific enclosure brand. Your data stays yours.</div>
+            </div>
+          </div>
+        </div>
+        <div class="fade-in fade-in-delay-1">
+          <p style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--gray); margin-bottom:16px;">Certified Compatible NAS Brands</p>
+          <div class="nas-compat-grid">
+            <div class="nas-card highlighted">
+              <div class="nas-card-name">Synology</div>
+              <div class="nas-card-sub">IronWolf on official Synology compatibility list across all bay configurations</div>
+              <span class="nas-card-badge nas-badge-green">✓ Certified</span>
+            </div>
+            <div class="nas-card highlighted">
+              <div class="nas-card-name">QNAP</div>
+              <div class="nas-card-sub">Full IronWolf & IronWolf Pro certification across TS, TVS, and TBS lines</div>
+              <span class="nas-card-badge nas-badge-green">✓ Certified</span>
+            </div>
+            <div class="nas-card highlighted">
+              <div class="nas-card-name">Asustor</div>
+              <div class="nas-card-sub">Tested and approved for Lockerstor, Drivestor, and Flashstor series</div>
+              <span class="nas-card-badge nas-badge-green">✓ Certified</span>
+            </div>
+            <div class="nas-card highlighted">
+              <div class="nas-card-name">UGREEN</div>
+              <div class="nas-card-sub">Official IronWolf certification for NASSync and DXP series enclosures</div>
+              <span class="nas-card-badge nas-badge-green">✓ Certified</span>
+            </div>
+            <div class="nas-card">
+              <div class="nas-card-name">Terramaster</div>
+              <div class="nas-card-sub">Compatible across F-Series and D-Series NAS systems</div>
+              <span class="nas-card-badge nas-badge-gray">✓ Compatible</span>
+            </div>
+            <div class="nas-card">
+              <div class="nas-card-name">Buffalo</div>
+              <div class="nas-card-sub">Supported across LinkStation and TeraStation lines</div>
+              <span class="nas-card-badge nas-badge-gray">✓ Compatible</span>
+            </div>
+          </div>
+          <p style="font-size:12px; color:var(--gray); margin-top:16px; line-height:1.5;">Always verify compatibility with your specific NAS model on the manufacturer's compatibility list before purchasing.</p>
+        </div>
       </div>
     </div>
   </section>
